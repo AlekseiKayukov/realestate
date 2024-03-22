@@ -1,0 +1,4 @@
+Id	CityId	StreetId	AddressHouse	AddressNumber	CoordinateLatitude	CoordinateLongitude	TotalArea
+12	1	5			0	0	45371
+13	1	2			0	0	16772
+14	1	10			0	0	12

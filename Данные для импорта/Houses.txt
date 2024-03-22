@@ -1,0 +1,4 @@
+Id	CityId	StreetId	AddressHouse	AddressNumber	CoordinateLatitude	CoordinateLongitude	TotalFloors	TotalArea
+9	1	1	25		0	0	2	84,4
+10	1	14			0	0	3	130
+11	1	3			0	0	1	120

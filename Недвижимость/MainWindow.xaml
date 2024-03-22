@@ -1,0 +1,98 @@
+﻿<Window x:Class="Недвижимость.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Недвижимость"
+        mc:Ignorable="d"
+        Title="Недвижимость" MinHeight="450" MinWidth="800" Height="450" WindowStartupLocation="CenterScreen" Width="800">
+    <Grid>
+        <TabControl TabStripPlacement="Top" Background="LightBlue">
+            <TabItem Background="LightBlue">
+                <TabItem.Header>
+                    <TextBlock FontSize="25">Клиент</TextBlock>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1,1,1,2"></Border>
+                        <TextBlock HorizontalAlignment="Center" FontSize="25" VerticalAlignment="Center" TextAlignment="Center">Поиск по ФИО клиента:</TextBlock>
+                        <TextBox Name="SearchClientTB" Grid.Column="1" FontSize="25" VerticalAlignment="Center" TextChanged="SearchClientTB_TextChanged"></TextBox>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="20">
+                        <DataGrid x:Name="ClientsDG" Grid.Row="0" Grid.Column="1" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Фамилия" IsReadOnly="True" Binding="{Binding FirstName}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Имя" IsReadOnly="True" Binding="{Binding MiddleName}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Отчество" IsReadOnly="True" Binding="{Binding LastName}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Телефон" IsReadOnly="True" Binding="{Binding Phone}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Почта" IsReadOnly="True" Binding="{Binding Email}" Width="*"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" Name="ResultClientSearch"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="AddClientBT" Background="White" Margin="5,0,5,0" Grid.Column="0" Content="Добавить запись" FontSize="25" Click="AddClientBT_Click"></Button>
+                        <Button x:Name="EditClientBT" Background="White" Margin="5,0,5,0" Grid.Column="1" Content="Изменить запись" FontSize="25" Click="EditClientBT_Click"></Button>
+                        <Button x:Name="DeleteClientBT" Background="White" Margin="5,0,5,0" Grid.Column="2" Content="Удалить запись" FontSize="25" Click="DeleteClientBT_Click"></Button>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Background="LightBlue">
+                <TabItem.Header>
+                    <TextBlock FontSize="25">Риэлтор</TextBlock>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid Grid.Row="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.ColumnSpan="2" BorderBrush="Black" BorderThickness="1,1,1,2"></Border>
+                        <TextBlock HorizontalAlignment="Center" FontSize="25" VerticalAlignment="Center" TextAlignment="Center">Поиск по ФИО риэлтора:</TextBlock>
+                        <TextBox Name="SearchAgentTB" Grid.Column="1" FontSize="25" VerticalAlignment="Center" TextChanged="SearchAgentTB_TextChanged"></TextBox>
+                    </Grid>
+                    <Grid Grid.Row="1" Margin="20">
+                        <DataGrid x:Name="AgentsDG" Grid.Row="0" Grid.Column="1" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="Фамилия" IsReadOnly="True" Binding="{Binding FirstName}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Имя" IsReadOnly="True" Binding="{Binding MiddleName}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Отчество" IsReadOnly="True" Binding="{Binding LastName}"></DataGridTextColumn>
+                                <DataGridTextColumn Header="Доля комиссии" IsReadOnly="True" Binding="{Binding DealShare}" Width="*"></DataGridTextColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" Name="ResultAgentSearch"></TextBlock>
+                    </Grid>
+                    <Grid Grid.Row="2">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                            <ColumnDefinition></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+                        <Button x:Name="AddAgentBT" Background="White" Margin="5,0,5,0" Grid.Column="0" Content="Добавить запись" FontSize="25" Click="AddAgentBT_Click"></Button>
+                        <Button x:Name="EditAgentBT" Background="White" Margin="5,0,5,0" Grid.Column="1" Content="Изменить запись" FontSize="25" Click="EditAgentBT_Click"></Button>
+                        <Button x:Name="DeleteAgentBT" Background="White" Margin="5,0,5,0" Grid.Column="2" Content="Удалить запись" FontSize="25" Click="DeleteAgentBT_Click"></Button>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
